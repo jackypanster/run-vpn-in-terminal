@@ -13,12 +13,12 @@ sudo pip install shadowsocks
 touch shadowsocks.json
 vi shadowsocks.json
 {
-"server":<server>,
-"server_port":9000,
-"local_port":1080,
-"password":<password>,
-"timeout":600,
-"method":"aes-256-cfb"
+  "server":<server>,
+  "server_port":<port>,
+  "local_port":1080,
+  "password":<password>,
+  "timeout":600,
+  "method":"aes-256-cfb"
 }
 ```
 
@@ -40,4 +40,14 @@ logFile = /var/log/polipo/polipo.log
 
 socksParentProxy = "127.0.0.1:1080"
 socksProxyType = socks5
+```
+
++ Run the polipo
+```bash
+sudo service polipo start
+```
+
++ Verify
+```bash
+curl http://www.google.com
 ```
