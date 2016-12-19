@@ -1,6 +1,6 @@
 ### Run vpn in terminal
 
-+ Install shadowsockts
++ Install shadowsocks
 ```bash
 sudo apt-get update
 sudo apt-get install python-pip
