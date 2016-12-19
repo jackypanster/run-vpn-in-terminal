@@ -21,3 +21,23 @@ vi shadowsocks.json
 "method":"aes-256-cfb"
 }
 ```
+
++ Run the shadowsocks
+```bash
+sslocal -c ./shadowsocks.json
+```
+
++ Install polipo
+```bash
+sudo apt-get install polipo
+```
+
++ Edit the configuration of polipo
+```bash
+vi /etc/polipo/config
+logSyslog = true
+logFile = /var/log/polipo/polipo.log
+
+socksParentProxy = "127.0.0.1:1080"
+socksProxyType = socks5
+```
