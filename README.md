@@ -24,7 +24,10 @@ vi shadowsocks.json
 
 + Run the shadowsocks
 ```bash
-sslocal -c ./shadowsocks.json
+sslocal -c ./shadowsocks.json -d restart
+#or
+sudo vi /etc/rc.local
+sudo sslocal -d restart -c /home/ubuntu/shadowsocks.json
 ```
 
 + Install polipo
@@ -44,7 +47,15 @@ socksProxyType = socks5
 
 + Run the polipo
 ```bash
-sudo service polipo start
+sudo service polipo restart
+#or
+sudo vi /etc/rc.local
+sudo service polipo restart
+```
++ Export the proxy
+```bash
+export http_proxy=http://127.0.0.1:8123
+export https_proxy=http://127.0.0.1:8123
 ```
 
 + Verify
